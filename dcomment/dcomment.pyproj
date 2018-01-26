@@ -35,12 +35,23 @@
     <Compile Include="dcomment\settings.py" />
     <Compile Include="dcomment\urls.py" />
     <Compile Include="dcomment\wsgi.py" />
+    <Compile Include="sku\admin.py" />
+    <Compile Include="sku\apps.py" />
+    <Compile Include="sku\migrations\__init__.py" />
+    <Compile Include="sku\models.py" />
+    <Compile Include="sku\tests.py" />
+    <Compile Include="sku\views.py" />
+    <Compile Include="sku\__init__.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
+    <Content Include="sku\templates\index.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="dcomment\" />
+    <Folder Include="sku\" />
+    <Folder Include="sku\migrations\" />
+    <Folder Include="sku\templates\" />
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
