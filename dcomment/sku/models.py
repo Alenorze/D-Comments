@@ -15,6 +15,26 @@ class Comment(models.Model):
     content = models.TextField()
     tone = models.TextField(blank=True)
 
+    @property
+    def tone_is_positive(self):
+        
+        if self.tone:
+
+            tone = json.loads(self.tone)
+            tone_categories = tone['document_tone']['tone_categories']
+            joy = 0.0
+
+            for tone_category in tone_categories:
+                if tone_category['category_id'] == 'emotion_tone':
+                    for tone_category_tone in tone_category['tones']:
+                        if tone_category_tone['tone_id'] == 'joy':
+                            joy = tone_category_tone['score']
+        
+            return joy >= 0.5
+            
+        return None
+
+
     class Meta:
         ordering = ('created',)
 
@@ -30,4 +50,3 @@ def provide_tone(sender, instance, *args, **kwargs):
     tone = tone_analyzer.tone(text=instance.content)
 
     instance.tone = json.dumps(tone)
-    
