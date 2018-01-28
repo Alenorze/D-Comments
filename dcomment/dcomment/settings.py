@@ -160,6 +160,6 @@ WATSON_PASSWORD = os.getenv('WATSON_PASSWORD')
 CORS_ORIGIN_ALLOW_ALL = True
 
 try:
-    from local import *
+    from local import * # pylint: disable=wildcard-import,unused-wildcard-import
 except ImportError:
     pass
