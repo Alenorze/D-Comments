@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     #Third party
     'rest_framework',
     'rest_framework_swagger',
+    'corsheaders',
     #Apps
     'sku'
 ]
@@ -57,6 +58,7 @@ REST_FRAMEWORK = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -154,6 +156,8 @@ STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 WATSON_USERNAME = os.getenv('WATSON_USERNAME')
 WATSON_PASSWORD = os.getenv('WATSON_PASSWORD')
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 try:
     from local import *
