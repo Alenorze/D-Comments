@@ -35,7 +35,7 @@ class Comment(models.Model):
             LOGGER.exception('Problem with tone JSON data.')
 
     class Meta(object):
-        ordering = ('created')
+        ordering = ('created',)
 
 
 # alternative: create a ToneField with pre_save()
@@ -53,4 +53,3 @@ def provide_tone(sender, instance, *args, **kwargs):
 
     except:
         LOGGER.exception('Problem with tone Watson call.')
-        

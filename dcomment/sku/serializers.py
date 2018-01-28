@@ -20,4 +20,4 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta(object):
         model = Comment
-        fields = ('url', 'username', 'email', 'groups', 'tone', 'tone_is_positive')
+        fields = ('id', 'url', 'username', 'email', 'groups', 'tone', 'tone_is_positive')
