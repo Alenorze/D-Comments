@@ -135,3 +135,11 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+WATSON_USERNAME = os.getenv('WATSON_USERNAME')
+WATSON_PASSWORD = os.getenv('WATSON_PASSWORD')
+
+try:
+    from local import *
+except ImportError:
+    pass
