@@ -33,6 +33,6 @@ setuptools==38.4.0
 simplejson==3.13.2
 six==1.11.0
 uritemplate==3.0.0
-urllib3==1.22
+urllib3==1.26.5
 watson-developer-cloud==1.0.2
 wrapt==1.10.11
